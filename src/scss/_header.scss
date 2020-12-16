@@ -425,7 +425,6 @@
 
 .block-nav {
    position: absolute;
-   width: 1500px;
    z-index: 30;
    background: #ffff;
    transform: translate(-3000px, 2000px);
@@ -436,6 +435,10 @@
    left: 0px;
    top: 24px;
    transition: transform 0.4s ease;
+
+   @media (min-width: 1765px) {
+      width: 1500px;
+   }
 }
 .block-nav-left {
    display: flex;

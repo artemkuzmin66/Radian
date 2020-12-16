@@ -24,7 +24,7 @@ burger.addEventListener("click", () => {
 })
 // burger
 
-const list = document.querySelectorAll(".product__bottom-col-list")
+const list = document.querySelectorAll(".product__bottom-col-list-item")
 list.forEach(l => {
    l.addEventListener('click', (e) => {
       e.preventDefault()
@@ -33,18 +33,22 @@ list.forEach(l => {
 })
 // list 
 
+
 const accordion = document.querySelectorAll('.product__bottom-col')
 
-for (item of accordion) {
-   item.addEventListener('click', function () {
-      if (this.classList.contains('active')) {
-         this.classList.remove('active')
-      } else {
-         for (el of accordion) {
-            el.classList.remove('active')
+if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+   for (item of accordion) {
+      item.addEventListener('click', function () {
+         if (this.classList.contains('active')) {
+            this.classList.remove('active')
+         } else {
+            for (el of accordion) {
+               el.classList.remove('active')
+            }
+            this.classList.add('active')
          }
-         this.classList.add('active')
-      }
-   })
+      })
+   }
 }
+
 // accordion
